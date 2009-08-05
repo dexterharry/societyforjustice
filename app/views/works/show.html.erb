@@ -1,0 +1,23 @@
+<h4><%=h @work.title %></h4>
+
+<div id="news_article_photo">
+  <div class="last_photo">
+    <%= image_tag @work.photo.url(:standard) %>
+  </div>
+
+  <div id="news_article_photo_tag">
+    <b><%=h @work.location %></b><br />
+    <%=h @work.emphasis %><br /><br />
+  </div>
+</div>
+            
+<%= @work.information %>
+
+<p class="return_link">
+  <% if admin? %>
+    <span><%= link_to 'Edit', edit_work_path(@work) %></span>
+    <span> | </span>
+  <% end %>
+  
+  <span><%= link_to 'Back', works_path %></span>
+</p>
